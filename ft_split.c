@@ -1,6 +1,13 @@
 #include <stdlib.h>
 
 
+int	ft_isdigit(int c)
+{
+	if (c > 47 && c < 58)
+		return (1);
+	return (0);
+}
+
 size_t	ft_strlen(const char *s)
 {
 	int	c;
@@ -168,3 +175,54 @@ char	**ft_split(char const *s, char c)
 	split[str_n] = 0;
 	return (split);
 }
+
+int	ft_atoi(const char *str)
+{
+	int				i;
+	int				r;
+	unsigned int	sol;
+
+	i = 0;
+	r = 1;
+	sol = 0;
+	while (str[i] == 32 || (str[i] > 8 && str[i] < 14))
+		i++;
+	if (str[i] == 45 || str[i] == 43)
+	{
+		if (str[i] == 45)
+			r = -1;
+		i++;
+	}
+	while (str[i] > 47 && str[i] < 58)
+	{
+		sol = (sol * 10) + (str[i] - 48);
+		if (sol > 2147483657 && r == 1)
+			return (-1);
+		if (sol > 2147483648 && r == -1)
+			return (0);
+		i++;
+	}
+	return (sol * r);
+}
+/*
+void ft_lstadd_back(t_list **list, t_list *new)
+{
+	t_list *p;
+
+	if (!*list)
+		*list = new;
+	else
+	{
+		p = ft_lstlast(*list);
+		p->next = new;
+	}
+}
+
+void ft_lstlast(t_list *list)
+{
+	if (!list)
+		return(0);
+	while(lst->next)
+		list = list->next;
+	return(list);
+}*/

@@ -1,5 +1,11 @@
 #include "push_swap.h"
 
+//swap the first two elements at the top of a stack
+/*
+comprobaciones: que exista la lista, que haya suficientes argumentos
+creamos una copia de la lista y asignamos memoria para un nodo auxiliar
+intercambiar los data de los dos elementos contando con el aux
+*/
 void	ft_swap(t_list **list, int nbr, int type)
 {
 	t_list	*copy;

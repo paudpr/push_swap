@@ -5,6 +5,8 @@ SRCS = lasquesean.c\
 
 OBJS = $(SRCS:.c=.o)
 
+CC = gcc
+
 CFLAGS = -Wall -Werror -Wextra -g3
 
 RM = rm -f
@@ -12,19 +14,6 @@ RM = rm -f
 LIBFT_PATH = ../libft
 
 LIBFT_NAME = libft.a
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
