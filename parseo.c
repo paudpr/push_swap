@@ -9,12 +9,14 @@ char	*join_argv(int argc, char **argv);
 int		check_valid_chars(char **nums);
 int		ft_isdigit(int c);
 int		check_duplicates(int *nums, int len);
+int 	*transform_to_nums(char **nums);
 
 int	main (int argc, char **argv)
 {
 	int		i;
 	char	**split;
 	char	*str;
+	int		*nums;
 
 	if (argc < 2)
 		return (write(1, "Error número de argumentos\n", 27));		//devolver 0 por que tecnicamente es una lista ordenada
@@ -27,20 +29,55 @@ int	main (int argc, char **argv)
 	}
 	str = join_argv(argc, argv);
 	split = ft_split(str, ' ');
-	printf("%s\n", str);
+	if (split == NULL)
+		return(0);
 	free(str);
 	if (check_valid_chars(split) != 1)
 		return (write(1, "Error no son dígitos\n", 21));
 
+
 	//por aqui hacer el atoi
+	if (transform_to_nums(split) == 0)
+		return(write(1, "Error MIN_INT o MAX_INT\n", 24));
+	nums = transform_to_nums(split);
 
+	i = 0;
+	while (nums[i])
+	{
 
-	printf("%s\n", str);
+	printf("DESPUEs----> %d\n", nums[i]);
+		i++;
+	}
+	
 	i = 0;
 	if (check_duplicates((int *)str, i) != 1)
 		return(write(1, "Error están duplicados\n", 23));
 	write(1, "Sin errores\n", 12);
 	return (0);
+}
+
+int *transform_to_nums(char **split)
+{
+	int i;
+	int j;
+	int *nums;
+
+	i = 0;
+	while (split[i])
+		i++;
+	nums = malloc(sizeof(int) * i + 1);
+	if (nums == NULL)
+		return(nums);
+	j = 0;
+	while(j < i)
+	{
+		if (ft_atoi(split[j]) < MIN_INT || ft_atoi(split[j]) > MAX_INT)
+			return (0);
+		nums[j] = ft_atoi(split[j]);
+		j++;
+	}
+	nums[j] = '\0';
+	return(nums);
 }
 
 //joins arguments into a single string
@@ -69,7 +106,6 @@ char	*join_argv(int argc, char **argv)
 		free(aux);
 		i++;
 	}
-	printf("%s\n", str);
 	return (str);
 }
 
@@ -97,24 +133,6 @@ int	check_valid_chars(char **nums)
 		i++;
 	}
 	return (1);
-}
-
-
-void transform_to_nums(char **nums)
-{
-	int i;
-
-	i = 0;
-	while (nums[i])
-	{
-		ft_atoi(nums[i]);
-		if (ft_atoi(nums[i]) < MIN_INT || ft_atoi(nums[i]) > MAX_INT)
-			return(0);		//gestionar este error en main
-		i++;
-
-	}
-
-
 }
 
 //checks there are no duplicated numbers
