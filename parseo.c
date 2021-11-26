@@ -17,7 +17,7 @@ int	main (int argc, char **argv)
 	char	**split;
 	char	*str;
 	int		*nums;
-
+	
 	if (argc < 2)
 		return (write(1, "Error número de argumentos\n", 27));		//devolver 0 por que tecnicamente es una lista ordenada
 	i = 1;
@@ -37,18 +37,21 @@ int	main (int argc, char **argv)
 
 
 	//por aqui hacer el atoi
-	if (transform_to_nums(split) == 0)
-		return(write(1, "Error MIN_INT o MAX_INT\n", 24));
+
+	// if (transform_to_nums(split) == 0)
+	// 	return(write(1, "Error MIN_INT o MAX_INT\n", 24));
+
 	nums = transform_to_nums(split);
+	// while (nums)
+	// {
+ 	printf("%i\n", nums[8]);
+	// 	nums++;
+	// }
 
-	i = 0;
-	while (nums[i])
-	{
 
-	printf("DESPUEs----> %d\n", nums[i]);
-		i++;
-	}
-	
+	//por aqui mapear
+
+
 	i = 0;
 	if (check_duplicates((int *)str, i) != 1)
 		return(write(1, "Error están duplicados\n", 23));
@@ -65,15 +68,16 @@ int *transform_to_nums(char **split)
 	i = 0;
 	while (split[i])
 		i++;
+printf("El valor de i es: %d\n", i);
 	nums = malloc(sizeof(int) * i + 1);
 	if (nums == NULL)
 		return(nums);
 	j = 0;
 	while(j < i)
 	{
-		if (ft_atoi(split[j]) < MIN_INT || ft_atoi(split[j]) > MAX_INT)
+		if (ft_atoi_long(split[j]) < MIN_INT || ft_atoi_long(split[j]) > MAX_INT)
 			return (0);
-		nums[j] = ft_atoi(split[j]);
+		nums[j] = ft_atoi_long(split[j]);
 		j++;
 	}
 	nums[j] = '\0';
@@ -122,7 +126,7 @@ int	check_valid_chars(char **nums)
 	while (nums[i])
 	{
 		j = 0;
-		if (nums[i][j] == '-' || nums[i][j] == '+')
+		while (nums[i][j] == '-' || nums[i][j] == '+')
 			j++;
 		while (nums[i][j])
 		{

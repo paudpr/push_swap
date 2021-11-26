@@ -24,6 +24,7 @@ size_t	ft_count_chrs(char const *s, char c);
 void	ft_free_tab(char **tab, size_t n);
 char	**ft_split(char const *s, char c);
 int		ft_atoi(const char *str);
+long	ft_atoi_long(const char *str);
 char	*ft_strjoin(char const *s1, char const *s2);
 int		ft_isdigit(int c);
 void	ft_lstadd_back(t_list **list, t_list *new);
