@@ -1,7 +1,7 @@
 NAME = push_swap
 
-SRCS = lasquesean.c\
-		unaspocasmas.c
+SRCS = parseo.c\
+		ft_split.c
 
 OBJS = $(SRCS:.c=.o)
 
@@ -19,8 +19,8 @@ LIBFT_NAME = libft.a
 
 
 
--L is used to include paths where the linker will look for libraries
--l is used to link a library, which must be passed without the lib prefix and the extension
+##-L is used to include paths where the linker will look for libraries
+##-l is used to link a library, which must be passed without the lib prefix and the extension
 
 
 
@@ -31,7 +31,7 @@ LIBFT_NAME = libft.a
 all: $(NAME)
 
 $(NAME): $(OBJS)
-		mensaje_personalizado $(COMPILALIBFT) $(NAME) $(OBJS)
+		 $(NAME) $(OBJS)
 
 run: all
 	gcc $(FLAGS) $(SRCS)

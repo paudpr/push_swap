@@ -9,7 +9,7 @@ char	*join_argv(int argc, char **argv);
 int		check_valid_chars(char **nums);
 int		ft_isdigit(int c);
 int		check_duplicates(int *nums, int len);
-int 	*transform_to_nums(char **nums);
+int 	*transform_to_nums(char **split);
 
 int	main (int argc, char **argv)
 {
@@ -37,38 +37,34 @@ int	main (int argc, char **argv)
 
 
 	//por aqui hacer el atoi
-
-	// if (transform_to_nums(split) == 0)
-	// 	return(write(1, "Error MIN_INT o MAX_INT\n", 24));
-
 	nums = transform_to_nums(split);
-	// while (nums)
-	// {
- 	printf("%i\n", nums[8]);
-	// 	nums++;
-	// }
-
-
-	//por aqui mapear
-
-
+	///////////////////////////////////////////////////////////////////////////////////////
+	//IMPRIME LO GUARRRRRRRRRDADO
 	i = 0;
-	if (check_duplicates((int *)str, i) != 1)
+	while(nums[i])
+	{
+		printf("%d\n", nums[i]);
+		i++;
+	}
+
+
+	if (check_duplicates(nums, i) != 1)
 		return(write(1, "Error están duplicados\n", 23));
 	write(1, "Sin errores\n", 12);
 	return (0);
+
+	//por aqui mapear
 }
 
 int *transform_to_nums(char **split)
 {
-	int i;
+	int i; 
 	int j;
 	int *nums;
 
 	i = 0;
 	while (split[i])
 		i++;
-printf("El valor de i es: %d\n", i);
 	nums = malloc(sizeof(int) * i + 1);
 	if (nums == NULL)
 		return(nums);
@@ -148,6 +144,7 @@ int check_duplicates(int *nums, int len)
 	int i;
 	int j;
 
+
 	i = 0;
 	while(i < len)
 	{
@@ -155,7 +152,9 @@ int check_duplicates(int *nums, int len)
 		while (j < len)
 		{
 			if (j != i && nums[i] == nums[j])
+			{
 				return(0);
+			}
 			j++;
 		}
 		i++;
