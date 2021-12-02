@@ -1,16 +1,3 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: pdel-pin <pdel-pin@student.42.fr>          +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/11/30 18:32:11 by pdel-pin          #+#    #+#              #
-#    Updated: 2021/11/30 20:11:32 by pdel-pin         ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
-
-
 NAME = push_swap
 
 LIBFT_NAME = libft.a
@@ -21,14 +8,15 @@ CFLAGS = -Wall -Werror -Wextra -g3
 
 CFLAGS += -I ./$(INC_PATH) -I ./$(LIBFT_PATH)
 
-LIBFT_PATH = libft
-INC_PATH = includes
-SRC_PATH = sources
-OBJ_PATH = objects
+LIBFT_PATH	= libft
+INC_PATH	= includes
+SRC_PATH	= sources
+OBJ_PATH	= objects
 
 SRC =	push_swap_utils.c \
 		main.c \
-		parseo.c
+		process_arguments.c\
+		create_list.c
 
 ##CFLAGS += -I $(INC_PATH) -I $(LIBFT_PATH)
 ##referencia al libft.a cuando se haya compilado, o algo
@@ -42,7 +30,7 @@ all: $(NAME)
 
 OBJS_NAME = $(SRC:%.c=%.o)
 
-##addprefix "coge" el segundo argumento y del path del primer argumento
+##addprefix "coge" el segundo argumento y el path del primer argumento. funciona como un while añadiendo paths a cada source
 SRCS = $(addprefix $(SRC_PATH)/, $(SRC))
 
 OBJS =  $(addprefix $(OBJ_PATH)/, $(OBJS_NAME))
@@ -69,7 +57,7 @@ $(LIBFT_NAME):
 $(MAKE): make
 
 run: all
-	gcc $(FLAGS) $(SRCS)
+	gcc $(CFLAGS) $(SRCS)
 
 norminette:
 	norminette $(SRCS) 
