@@ -10,21 +10,33 @@
 # include <string.h>
 # include <stdio.h>
 
-typedef struct s_pepe
+typedef struct s_values
 {
 	int	size_g;
 	int	size_a;
 	int	size_b;
 	int	*aux_nums;
-}	t_pepe;
+	t_list	*head;
 
+}	t_values;
+
+/* Parseo   */
 int		check_valid_args(char **argv);
 char	*join_argv(int argc, char **argv);
 int		check_valid_chars(char **nums);
 int		*transform_to_nums(char **split);
 int		check_duplicates(int *nums, int len);
+/* Utils   */
 long	ft_atoi_long(const char *str);
 void	print_error(void);
+void	ft_free_double(char **tab, size_t n);
+/* Lista   */
+t_list	*init_list(int *nums, int len);
+void	show_list(t_list *lst, int num);
+void	ft_free(t_list **list, t_values main, int index);
+
+
+
 
 #endif
 

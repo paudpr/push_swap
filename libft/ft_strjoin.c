@@ -6,7 +6,7 @@
 /*   By: pdel-pin <pdel-pin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 12:37:41 by pdel-pin          #+#    #+#             */
-/*   Updated: 2021/11/16 11:36:13 by pdel-pin         ###   ########.fr       */
+/*   Updated: 2021/12/02 20:02:36 by pdel-pin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,27 @@
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*t;
+	size_t	i;
+	size_t	j;
 
 	if (!s1 || !s2)
 		return (NULL);
-	t = malloc((ft_strlen(s1) + ft_strlen(s2) + 1) * sizeof(char));
+	j = (ft_strlen(s1) + ft_strlen(s2));
+	t = malloc((j + 1) * sizeof(char));
 	if (t == 0)
 		return (NULL);
-	if (s1 != 0 && s2 != 0)
+	i = 0;
+	while (s1[i] != '\0')
 	{
-		ft_strlcpy(t, s1, ft_strlen(s1) + 1);
-		ft_strlcat(t, s2, (ft_strlen(s1) + ft_strlen(s2) + 1));
-		return (t);
+		t[i] = s1[i];
+		i++;
 	}
-	return (0);
+	j = 0;
+	while (s2[j])
+	{
+		t[i++] = s2[j];
+		j++;
+	}
+	t[i++] = '\0';
+	return (t);
 }

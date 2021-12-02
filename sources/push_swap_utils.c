@@ -25,8 +25,7 @@ long	ft_atoi_long(const char *str)
 	i = ft_atoi_long_spaces(str, &r);
 	if (i >= 2)
 	{
-		write(1, "Error muchos signos\n", 20);
-		exit (0);
+		print_error();
 	}
 	while (str[i] > 47 && str[i] < 58)
 	{
@@ -39,4 +38,33 @@ long	ft_atoi_long(const char *str)
 		i++;
 	}
 	return (sol * r);
+}
+
+void print_error(void)
+{
+	write(1, "Error\n", 6);
+	exit(0);
+}
+
+void	ft_free_double(char **tab, size_t n)
+{
+	if (!tab[n])
+	{
+		while (n > 0)
+			free(tab[n--]);
+		free(tab);
+	}
+}
+
+void ft_free(t_list **list, t_values main, int index)
+{
+	if (index == 1)
+		ft_lstclear(list, free);
+	if (index == 0)
+		free(main.aux_nums);
+	if (index == 2)
+	{
+		ft_lstclear(list, free);
+		free(main.aux_nums);
+	}
 }

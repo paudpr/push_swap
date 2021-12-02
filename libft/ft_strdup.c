@@ -6,7 +6,7 @@
 /*   By: pdel-pin <pdel-pin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 16:38:01 by pdel-pin          #+#    #+#             */
-/*   Updated: 2021/11/16 11:35:57 by pdel-pin         ###   ########.fr       */
+/*   Updated: 2021/12/02 21:02:00 by pdel-pin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strdup(const char *s1)
 
 	cpy = malloc((ft_strlen(s1) + 1) * sizeof(char));
 	if (cpy == NULL)
-		return (cpy);
+		return (NULL);
 	i = 0;
 	while (s1[i])
 	{
@@ -29,3 +29,29 @@ char	*ft_strdup(const char *s1)
 	cpy[i] = '\0';
 	return (cpy);
 }
+
+/*
+#include <stdio.h>
+void pdel_pin()
+{
+	system("leaks -q a.out");
+}
+
+int main(int argc, char **argv)
+{
+	char *pepe;
+	char *juan;
+
+	pepe = "Mierda congelada";
+
+	juan = ft_strdup(pepe);
+	printf("probando a imprimir juan:    %s\n", juan);
+
+	if (argc < 2)
+		return(0);
+	printf("probando a imprimir un argumento:    %s\n", argv[1]);
+	atexit(pdel_pin);
+	return(0);
+		
+}
+*/

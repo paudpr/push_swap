@@ -6,7 +6,7 @@
 /*   By: pdel-pin <pdel-pin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 14:42:33 by pdel-pin          #+#    #+#             */
-/*   Updated: 2021/12/02 12:22:57 by pdel-pin         ###   ########.fr       */
+/*   Updated: 2021/12/02 18:55:29 by pdel-pin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,5 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *))
 	if (lst == NULL)
 		return ;
 	if (del != 0)
-	{	
-		del(lst -> data);
-		free(lst);
-	}
+		del(&lst -> data);
 }

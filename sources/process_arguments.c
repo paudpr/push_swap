@@ -32,7 +32,11 @@ char	*join_argv(int argc, char **argv)
 
 	i = 1;
 	aux = ft_strdup(argv[1]);
+	printf("AQUI ESTA MI PUTO LEAK  --> %p\n", aux);
 	str = malloc(sizeof(char) * ft_strlen(aux));
+	free(aux);
+	if (str == NULL)
+		print_error();
 	while (i < argc)
 	{
 		aux = ft_strjoin(str, " ");
@@ -93,7 +97,7 @@ int	*transform_to_nums(char **split)
 	{
 		if (ft_atoi_long(split[j]) < MIN_INT
 			|| ft_atoi_long(split[j]) > MAX_INT)
-			exit(0);
+			print_error();
 		nums[j] = ft_atoi_long(split[j]);
 		j++;
 	}
