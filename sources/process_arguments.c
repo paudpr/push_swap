@@ -32,9 +32,10 @@ char	*join_argv(int argc, char **argv)
 
 	i = 1;
 	aux = ft_strdup(argv[1]);
-	printf("AQUI ESTA MI PUTO LEAK  --> %p\n", aux);
+	printf("AQUI ESTA MI PUTO LEAK       -->     %p\n", aux);
 	str = malloc(sizeof(char) * ft_strlen(aux));
 	free(aux);
+	aux = NULL;
 	if (str == NULL)
 		print_error();
 	while (i < argc)

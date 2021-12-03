@@ -15,8 +15,10 @@ OBJ_PATH	= objects
 
 SRC =	push_swap_utils.c \
 		main.c \
+		main_utils.c\
 		process_arguments.c\
-		create_list.c
+		create_list.c\
+		swap.c
 
 ##CFLAGS += -I $(INC_PATH) -I $(LIBFT_PATH)
 ##referencia al libft.a cuando se haya compilado, o algo
@@ -48,16 +50,18 @@ $(NAME): $(OBJS) $(LIBFT_NAME)
 		$(CC) $(CFLAGS) $(OBJS) -o $(NAME) $(addprefix $(LIBFT_PATH)/, $(LIBFT_NAME))
 
 $(LIBFT_NAME):
-			$(MAKE) all -sC $(LIBFT_PATH)
-
+			make -sC $(LIBFT_PATH)
 
 ##RULES
 
 #hace make a un "sub-makefile"
-$(MAKE): make
+##$(MAKE): make
 
 run: all
 	gcc $(CFLAGS) $(SRCS)
+
+##debug: CFLAGS += -fsanitize=address
+##debug: $(NAME)
 
 norminette:
 	norminette $(SRCS) 
@@ -68,7 +72,7 @@ clean:
 fclean: clean
 		rm $(NAME) 
 		rm -rf $(OBJ_PATH)
-		$(MAKE) fclean -sC $(LIBFT_PATH)
+		make fclean -sC $(LIBFT_PATH)
 
 re: fclean all
 
