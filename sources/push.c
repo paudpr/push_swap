@@ -5,42 +5,51 @@
 caso_1: si el stack que recibe está vacío, el stack es igual al nodo que movemos.
 casp_2: si el stack que recibe no está vacío, */
 
-void ft_push(t_list **stack_a, t_list **stack_b, int type, t_values main)
+int *ft_push(t_list **stack_orig, t_list **stack_dest)
 {
 	t_list *copy;
 	t_list *aux;
-	int aux;
 
-	if (stack_b == NULL)
-		return(0);
-	copy = *stack_b;
-	if(stack_a == NULL)
+	if (stack_orig == NULL)
+		return (0);
+	copy = *stack_orig;
+	if(stack_dest == NULL)
 	{
-		*stack_a = copy;
-		*stack_b = copy->next;
-		//stack_a->next = NULL;
-		printf("DATA STACK_A ----> %i\n", stack_a.data);
-		printf("NEXT STACK_A ----> %p\n", stack_a.next);
+		aux = *stack_orig;
+		*stack_dest = copy;
+		copy->next = NULL;
+		*stack_orig = aux->next;
+		free(aux);
 	}
 	else
 	{
-		aux = *stack_a;
-		*stack_a = copy;
-		*stack_b = copy->next;
-		copy->next = aux;
+		ft_lstadd_front(stack_dest, copy);
+		stack_orig = &copy->next;
+		free(copy);
 	}
+	return(0);
+}
+
+
+int *do_push(t_list **stack_orig, t_list **stack_dest, int type, t_values main)
+{
+	if(!stack_orig)
+		return (NULL);
 	if (type == 0)
 	{
+		ft_push(stack_orig, stack_dest);
 		main.size_a++;
 		main.size_b--;
 		write(1, "pa\n", 3);
 	}
 	if (type == 1)
 	{
+		ft_push(stack_orig, stack_dest);
 		main.size_b++;
 		main.size_a--;
 		write(1, "pb\n", 3);
 	}
-
-
+	if(main.size_a + main.size_b != main.size_g)
+		print_error();
+	return(0);
 }

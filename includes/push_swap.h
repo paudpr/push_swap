@@ -37,6 +37,8 @@ void	ft_free(t_list **list, t_values main, int index);
 /* Game Rules */
 int		*ft_swap(t_list **list, int type, t_values main);
 int		*ft_swap_ss(t_list **stack_a, t_list **stack_b, int type, t_values main);
+int		*ft_push(t_list **stack_orig, t_list **stack_dest);
+int		*do_push(t_list **stack_orig, t_list **stack_dest, int type, t_values main);
 
 /* Main    */
 int *main_check(int argc, char **argv, t_values *main);

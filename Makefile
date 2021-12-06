@@ -18,7 +18,8 @@ SRC =	push_swap_utils.c \
 		main_utils.c\
 		process_arguments.c\
 		create_list.c\
-		swap.c
+		swap.c\
+		push.c
 
 ##CFLAGS += -I $(INC_PATH) -I $(LIBFT_PATH)
 ##referencia al libft.a cuando se haya compilado, o algo
