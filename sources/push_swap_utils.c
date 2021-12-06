@@ -46,11 +46,11 @@ void print_error(void)
 	exit(0);
 }
 
-void	ft_free_double(char **tab, size_t n)
+void	ft_free_double(char **tab, int n)
 {
-	if (!tab[n])
+	if (tab[n - 1])
 	{
-		while (n > 0)
+		while (n >= 0)
 			free(tab[n--]);
 		free(tab);
 	}

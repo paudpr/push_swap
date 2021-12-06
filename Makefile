@@ -19,7 +19,8 @@ SRC =	push_swap_utils.c \
 		process_arguments.c\
 		create_list.c\
 		swap.c\
-		push.c
+		push.c\
+		rotate.c
 
 ##CFLAGS += -I $(INC_PATH) -I $(LIBFT_PATH)
 ##referencia al libft.a cuando se haya compilado, o algo
@@ -47,19 +48,18 @@ $(OBJ_PATH)/%.o: $(SRC_PATH)/%.c | $(OBJ_PATH)
 ##s es para silenciar y C para que vaya al directorio
 ##	make -sC $(LIBFT_PATH)
 
-$(NAME): $(OBJS) $(LIBFT_NAME)
+##el | está para evitar que haga relink
+##otra solución sería copiar la orden de $(LIBFT_NAME) para ejecutar antes de la compilación (dentro de $(NAME))
+$(NAME): $(OBJS) | $(LIBFT_NAME)
 		$(CC) $(CFLAGS) $(OBJS) -o $(NAME) $(addprefix $(LIBFT_PATH)/, $(LIBFT_NAME))
 
 $(LIBFT_NAME):
-			make -sC $(LIBFT_PATH)
+			$(MAKE) -sC $(LIBFT_PATH)
 
 ##RULES
 
 #hace make a un "sub-makefile"
-##$(MAKE): make
-
-run: all
-	gcc $(CFLAGS) $(SRCS)
+$(MAKE): make
 
 ##debug: CFLAGS += -fsanitize=address
 ##debug: $(NAME)

@@ -7,23 +7,23 @@ que no haya más elementos que argumentos en total
 creamos una copia de la lista y asignamos memoria para un nodo auxiliar
 intercambiar los data de los dos elementos contando con el aux
 */
-int	*ft_swap(t_list **list, int type, t_values main)
+void	ft_swap(t_list **list, int type, t_values *main)
 {
 	t_list	*copy;
 	t_list	*aux;
-	int		items;
+	unsigned int		items;
 
 	if (!list)
-		return (NULL);
+		return ;
 	items = ft_lstsize(*list);
-	if (items > main.size_g)
+	if (items > main->size_g)
 		print_error();
 	if (items < 1)
-		return (0);
+		return ;
 	copy = *list;
 	aux = malloc(sizeof(t_list));
 	if (aux == NULL)
-		return (NULL);
+		return ;
 	aux->data = copy->next->data;
 	copy->next->data = copy->data;
 	copy->data = aux->data;
@@ -32,18 +32,16 @@ int	*ft_swap(t_list **list, int type, t_values main)
 	if (type == 1)
 		write(1, "sb\n", 3);
 	ft_lstclear(&aux, free);
-	return (0);
 }
 
-int	*ft_swap_ss(t_list **stack_a, t_list **stack_b, int type, t_values main)
+void	do_swap_ss(t_list **stack_a, t_list **stack_b, int type, t_values *main)
 {
 	if (!stack_a || !stack_b)
-		return (NULL);
+		return ;
 	if (type == 2)
 	{
-		ft_swap(stack_a, 0, main);
-		ft_swap(stack_b, 1, main);
+		ft_swap(stack_a, 2, main);
+		ft_swap(stack_b, 2, main);
 		write(1, "ss\n", 3);
 	}
-	return (0);
 }

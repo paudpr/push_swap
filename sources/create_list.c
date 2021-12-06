@@ -24,7 +24,10 @@ void	show_list(t_list *lst, int num)
 
 	i = 0;
 	if (lst == NULL)
+	{
+		write(1, "Lista vacía \n\n", 15);
 		return ;
+	}
 	while (i < num && lst != NULL)
 	{
 		printf("DIRECTION: %p\nData: %d\nNext node: %p\n\n", &lst->data, *lst->data, lst->next);
