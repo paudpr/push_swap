@@ -12,25 +12,30 @@ void ft_push(t_list **stack_orig, t_list **stack_dest)
 
 	if (stack_orig == NULL)
 		return ;
+	//copy = ft_lstnew(stack_orig[0]->data);
 	copy = *stack_orig;
-	if(stack_dest == NULL)
+	if(*stack_dest == NULL)
 	{
-		aux = *stack_dest;
 		*stack_dest = copy;
-		aux->next = NULL;
+		aux = *stack_dest;
 		*stack_orig = copy->next;
+		aux->next = NULL;
 		//free(aux);
 	}
 	else
 	{
-		// ft_lstadd_front(stack_dest, copy);
-		aux = *stack_dest;
-		*stack_dest = copy;
-		*stack_orig = copy->next;
-		copy->next = aux;
+		ft_lstadd_front(stack_dest, copy);
+		show_list(*stack_dest, ft_lstsize(*stack_dest));
+		aux = *stack_orig;
+		printf("lalala\n");
+		//stack_orig = stack_orig->next;
+		//show_list(copy, ft_lstsize(copy));
+		free(aux);
 		//free(copy);
 	}
 }
+
+
 
 void do_push(t_list **stack_orig, t_list **stack_dest, int type, t_values *main)
 {
