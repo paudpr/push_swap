@@ -16,10 +16,10 @@ int	main(int argc, char **argv)
 	stack_b = init_list(array, 3);
 	//stack_b = 0;
 	stack_a = init_list(main.aux_nums, main.size_g);
-	main.size_b = 0;
+	main.size_b = 3;
 	main.size_a = argc - 1;
-	if(main.size_a + main.size_b != main.size_g)
-		print_error();
+	// if(main.size_a + main.size_b != main.size_g)
+	// 	print_error();
 	
 	// show_list(stack_a, main.size_g);
 	// do_swap_ss(&stack_a, &stack_b, 2, &main);
@@ -28,14 +28,16 @@ int	main(int argc, char **argv)
 	//printf("-------> %d\n", *stack_b->data);
 	show_list(stack_a, main.size_a);
 	show_list(stack_b, 3);
-	// printf("main.size_a = %d\n\n", main.size_a);
-	// printf("main.size_b = %d\n\n", main.size_b);
-	do_push(&stack_a, &stack_b, 1, &main);
+	printf("main.size_a = %d\n\n", main.size_a);
+	printf("main.size_b = %d\n\n", main.size_b);
+	do_push(&stack_a, &stack_b, 0, &main);
 	printf("---------------\n\n");
 	printf("main.size_a = %d\n\n", main.size_a);
 	printf("main.size_b = %d\n\n", main.size_b);
-	//show_list(stack_a, main.size_g);
-	//show_list(stack_b, main.size_b);
+	show_list(stack_a, main.size_a);
+	printf("--------2\n\n");
+	show_list(stack_b, main.size_b);
+	show_list(stack_a, main.size_a);
 
 	//do_rotate(dsfghjgfdssafsgh)
 

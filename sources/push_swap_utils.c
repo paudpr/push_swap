@@ -68,3 +68,18 @@ void ft_free(t_list **list, t_values main, int index)
 		free(main.aux_nums);
 	}
 }
+
+void check_sort(t_list **list, t_values main)
+{
+	int i;
+
+	i = 0;
+	while(i < main.size_g && list->next != NULL)
+	{
+		if(list->data > list->next->data)
+			return(1);
+		list = list->next;
+		i++;
+	}
+	return(0);
+}

@@ -24,18 +24,25 @@ void ft_push(t_list **stack_orig, t_list **stack_dest)
 	}
 	else
 	{
-		ft_lstadd_front(stack_dest, copy);
+		printf("----------------hago ft_lstaddd_front después\n\n");
+		show_list(copy, ft_lstsize(copy));
 		show_list(*stack_dest, ft_lstsize(*stack_dest));
-		aux = *stack_orig;
+		show_list(*stack_orig, ft_lstsize(*stack_orig));
+		ft_lstadd_front(stack_dest, ft_lstnew(stack_orig[0]->data));
+		copy = copy->next;
+		free(copy);
+		printf("----------------he hecho ya ft_lstaddd_front\n\n");
+		show_list(copy, ft_lstsize(copy));
+		show_list(*stack_dest, ft_lstsize(*stack_dest));
+		show_list(*stack_orig, ft_lstsize(*stack_orig));
 		printf("lalala\n");
-		//stack_orig = stack_orig->next;
+
+		show_list(*stack_orig, ft_lstsize(*stack_orig));
 		//show_list(copy, ft_lstsize(copy));
-		free(aux);
+
 		//free(copy);
 	}
 }
-
-
 
 void do_push(t_list **stack_orig, t_list **stack_dest, int type, t_values *main)
 {
@@ -44,8 +51,8 @@ void do_push(t_list **stack_orig, t_list **stack_dest, int type, t_values *main)
 	if (type == 0)
 	{
 		ft_push(stack_orig, stack_dest);
-		main->size_a++;
-		main->size_b--;
+		main->size_a--;
+		main->size_b++;
 		write(1, "pa\n", 3);
 	}
 	if (type == 1)
@@ -55,6 +62,6 @@ void do_push(t_list **stack_orig, t_list **stack_dest, int type, t_values *main)
 		main->size_a--;
 		write(1, "pb\n", 3);
 	}
-	if(main->size_a + main->size_b != main->size_g)
-		print_error();
+	// if(main->size_a + main->size_b != main->size_g)
+	// 	print_error();
 }
