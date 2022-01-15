@@ -12,7 +12,7 @@ void	ft_swap(t_list **list, int type, t_values *main)
 	t_list	*copy;
 	t_list	*aux;
 	unsigned int		items;
-
+	
 	if (!list)
 		return ;
 	items = ft_lstsize(*list);

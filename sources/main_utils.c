@@ -1,6 +1,6 @@
 #include <push_swap.h>
 
-int *main_check(int argc, char **argv, t_values *main)
+int	*main_check(int argc, char **argv, t_values *main)
 {
 	int		i;
 	char	**split;

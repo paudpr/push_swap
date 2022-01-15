@@ -129,21 +129,9 @@ int	check_duplicates(int *nums, int len)
 	return (1);
 }
 
-//just a function to try things out and see how it's going
-/*
-void	ft_print(int *nums)
-{
-	size_t	i;
-
-	i = -1;
-	while (++i < 5)
-		printf("num[%zu] : %d\n", i, nums[i]);
-}
-*/
-
-
 /*se queda en standby porsiaca luego hace falta pero en principio
 no lo necesito por que ya son números y eso es ordenable en si mismo
+
 int do_mapping(int *nums)
 {
 	int i;	//guarda índice de más pequeño

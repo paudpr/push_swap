@@ -58,10 +58,10 @@ void	ft_free_double(char **tab, int n)
 
 void ft_free(t_list **list, t_values main, int index)
 {
-	if (index == 1)
-		ft_lstclear(list, free);
 	if (index == 0)
 		free(main.aux_nums);
+	if (index == 1)
+		ft_lstclear(list, free);
 	if (index == 2)
 	{
 		ft_lstclear(list, free);
@@ -69,6 +69,7 @@ void ft_free(t_list **list, t_values main, int index)
 	}
 }
 
+/*
 void check_sort(t_list **list, t_values main)
 {
 	int i;
@@ -77,9 +78,9 @@ void check_sort(t_list **list, t_values main)
 	while(i < main.size_g && list->next != NULL)
 	{
 		if(list->data > list->next->data)
-			return(1);
+			break ;
 		list = list->next;
 		i++;
 	}
-	return(0);
 }
+*/
