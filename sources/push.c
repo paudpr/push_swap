@@ -19,21 +19,19 @@ void ft_push(t_list *stack_orig, t_list *stack_dest, t_values *main)
 		aux = copy->next;
 		stack_orig = aux;
 		ft_free(&copy, *main, 2);
-		// free(copy);
 	}
 	else
 	{
 		ft_lstadd_front(&stack_dest, ft_lstnew(stack_orig[0].data));
 		aux = copy->next;
 		stack_orig = aux;
-		free(copy);
+		ft_free(&copy, *main, 2);
 
 		// show_list(stack_orig, ft_lstsize(stack_orig));
 		//show_list(copy, ft_lstsize(copy));
 
 		
 	}
-	system("leaks -q push_swap");
 }
 
 /*
