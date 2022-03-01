@@ -20,7 +20,8 @@ SRC =	push_swap_utils.c \
 		create_list.c\
 		swap.c\
 		push.c\
-		rotate.c
+		rotate.c \
+		sort_3.c
 
 ##CFLAGS += -I $(INC_PATH) -I $(LIBFT_PATH)
 ##referencia al libft.a cuando se haya compilado, o algo

@@ -1,7 +1,7 @@
 #include <push_swap.h>
 
 /* shift all elements of stack by one. first element becomes last */
-void ft_rotate(t_list **list, int type)
+void ft_rotate(t_list **list)
 {
 	t_list *copy;
 	unsigned int items;
@@ -15,16 +15,11 @@ void ft_rotate(t_list **list, int type)
 	*list = copy->next;
 	copy->next = NULL;
 	ft_lstadd_back(list, copy);
-
-	if (type == 0)
-		write(1, "ra\n", 3);
-	if (type == 1)
-		write(1, "rb\n", 3);
 	ft_lstclear(&copy, free);
 	return ;	
 }
 
-void ft_rev_rotate(t_list **list, int type)
+void ft_rev_rotate(t_list **list)
 {
 	t_list *copy;
 	t_list *aux;
@@ -53,6 +48,7 @@ void ft_rev_rotate(t_list **list, int type)
 	return ;
 }
 
+/*
 void do_rotate(t_list **stack_a, t_list **stack_b, int type)
 {
 	if(!stack_a || !stack_b)
@@ -71,3 +67,4 @@ void do_rotate(t_list **stack_a, t_list **stack_b, int type)
 	}
 	return ;
 }
+*/

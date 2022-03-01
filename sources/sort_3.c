@@ -1,45 +1,51 @@
 #include <push_swap.h>
 
-void sort_3(t_list **list, t_values main)
+void sort_3(t_list **stack, t_values *main)
 {
-	if (!list)
+	int i;
+
+	(void)main;
+	if(!stack)
 		return ;
-	if (main.size_g >= 2 && main.size_g <= 3)
-	{
-		while(check_sort(*stack_a, main) != 0)
-		{
-			if(list->data > list->next->next->data &&
-				list->data > list->next->data)
-				ft_rotate(list, 0)
-			else if(list->next->data < list->data &&
-				list->next->data > llist->next->next->data)
-				ft_rev_rotate(list, 0);
-			else if(list->next->data > list->data &&
-				list->next->data < llist->next->next->data)
-				ft_rev_rotate(list, 0);
-			else if(list->data > list->next->data &&
-				list->data < list->next->next->data &&
-				lis->next->data < list->next->next->data)
-				do_swap(list, 0);
-		}
-	}
-	return(0);
+	i = ft_lstsize(*stack);
+	if (i != 3)
+		return ;
+	if(*stack[0]->data > *stack[0]->next->data && 
+		*stack[0]->next->data < *stack[0]->next->next->data &&
+		*stack[0]->data > *stack[0]->next->next->data)
+			ft_rotate(stack);
+	if(*stack[0]->next->data < *stack[0]->data &&
+		*stack[0]->next->data > *stack[0]->next->next->data)
+			ft_rev_rotate(stack);
+	if(*stack[0]->next->data > *stack[0]->data &&
+		*stack[0]->next->data < *stack[0]->next->next->data)
+			ft_rev_rotate(stack);
+	if(*stack[0]->data > *stack[0]->next->data &&
+		*stack[0]->data < *stack[0]->next->next->data &&
+		*stack[0]->next->data < *stack[0]->next->next->data)
+			ft_swap(stack, 0, main);
+	
+	
 }
 
 
 
-
-void sort_4(t_list **stack_a, t_list **stack_b, t_values main)
+/*
+static void	ft_3sort(t_list **stack, int num)
 {
-	if(!list)
-		return ;
-		
-	if(main.size_g >= 2 && main.size_g <= 4)
+	t_list	*temp;
+
+	temp = *stack;
+	if (is_sorted(stack, num) == 0)
+		exit(0);
+	if (temp->content > temp->next->content)
+		ft_swap(stack, num, 0);
+	if (temp->content > temp->next->next->content)
+		ft_rrotate_down(stack, num, 0);
+	if (is_sorted(stack, num) != 0)
 	{
-		while(check_sort(*stack_a, main)
-
-
+		ft_rrotate_down(stack, num, 0);
+		if (is_sorted(stack, num) != 0)
+			ft_swap(stack, num, 0);
 	}
-
-
-}
+}*/

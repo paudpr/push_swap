@@ -27,9 +27,9 @@ int	main(int argc, char **argv)
 	//show_list(stack_a, main.size_a);
 	// show_list(stack_b, main.size_b);
 
-	ft_rev_rotate(&stack_a, 0);
+	//ft_rev_rotate(&stack_a, 0);
 	printf("\nsddgf\n");
-	
+	sort_3(&stack_a, &main);
 	show_list(stack_a, main.size_a);
 	// show_list(stack_b, main.size_b + 1);
 
