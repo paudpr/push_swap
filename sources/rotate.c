@@ -1,21 +1,19 @@
 #include <push_swap.h>
 
+/* shift all elements of stack by one. first element becomes last */
 void ft_rotate(t_list **list, int type)
 {
 	t_list *copy;
-	int items;
+	unsigned int items;
 
 	if (!list)
 		return ;
 	items = ft_lstsize(*list);
-	if (items < 0)
+	if (items <= 1)
 		return ;
 	copy = *list;
-	//show_list(copy, items);
 	*list = copy->next;
 	copy->next = NULL;
-	// while(list->next)
-	// 	copy = copy->next;
 	ft_lstadd_back(list, copy);
 
 	if (type == 0)
@@ -30,26 +28,28 @@ void ft_rev_rotate(t_list **list, int type)
 {
 	t_list *copy;
 	t_list *aux;
+	unsigned int i;
 	unsigned int items;
 
 	items = ft_lstsize(*list);
-	if (items < 0)
+	if (items <= 1)
 		return ;
-	copy = *list;
-	while (items)
+	aux = *list;
+	i = 0;
+	while (i < items - 1)
 	{
-		aux = copy;
-		copy = copy->next;
-		items--;
+		aux = aux->next;
+		i++;
 	}
-	ft_lstadd_front(list, copy);
-	aux->next = NULL;
-
-	if (type == 0)
-		write(1, "rra\n", 4);
-	if (type == 1)
-		write(1, "rrb\n", 4);
-	ft_lstclear(&copy, free);
+	ft_lstadd_front(list, aux);
+	copy = *list;
+	while(i != 0)
+	{
+		copy = copy->next;
+		i--;
+	}
+	copy->next = NULL;
+	free(copy);
 	return ;
 }
 
