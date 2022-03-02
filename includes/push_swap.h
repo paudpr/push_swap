@@ -32,6 +32,7 @@ int		check_duplicates(int *nums, int len);
 long	ft_atoi_long(const char *str);
 void	print_error(void);
 void	ft_free_double(char **tab, int n);
+int		check_sort(t_list **list, t_values *main);
 
 /* Lista   */
 t_list	*init_list(int *nums, int len);
@@ -50,5 +51,9 @@ void	do_rotate(t_list **stack_a, t_list **stack_b, int type);
 /* Main    */
 int *main_check(int argc, char **argv, t_values *main);
 
+/* Sort */
 void sort_3(t_list **stack, t_values *main);
+void sort_4_5(t_list **stack_a, t_list **stack_b, t_values *main);
+
+
 #endif

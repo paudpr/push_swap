@@ -31,8 +31,10 @@ void	ft_swap(t_list **list, int type, t_values *main)
 		write(1, "sa\n", 3);
 	if (type == 1)
 		write(1, "sb\n", 3);
-	ft_lstclear(&aux, free);
+	//ft_lstclear(&aux, free);
+	free(aux);
 }
+
 
 void	do_swap_ss(t_list **stack_a, t_list **stack_b, int type, t_values *main)
 {

@@ -69,21 +69,26 @@ void ft_free(t_list **list, t_values main, int index)
 	}
 }
 
-/*
-void check_sort(t_list **list, t_values main)
+
+int check_sort(t_list **list, t_values *main)
 {
-	int i;
+	unsigned int i;
 
 	i = 0;
-	while(i < main.size_g && list->next != NULL)
+	// printf("%d\n", i);
+	// printf("%d\n", main->size_g);
+	// printf("%d\n", *list[0]->data);
+	while(i < main->size_g && list[0]->next != NULL)
 	{
-		if(list->data > list->next->data)
-			break ;
-		list = list->next;
+		if(*list[0]->data > *list[0]->next->data)
+			return(0);
+		//printf("*list[0]->data -> %d\n", *list[0]->data);
+		list = &list[0]->next;
 		i++;
 	}
+	return(1);
 }
-*/
+
 
 
 
