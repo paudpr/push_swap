@@ -17,11 +17,10 @@ int	main(int argc, char **argv)
 	main.size_a = main.size_g;
 	stack_a = init_list(main.aux_nums, main.size_g);
 	
-	// int w = 3;
+	// int w = 2;
 	// //int q = 5;
 	// stack_b = ft_lstnew(&w);
 	
-	printf("check sort -> %d\n", check_sort(&stack_a, &main));
 	printf("%d, %d, %d\n", main.size_g, main.size_a, main.size_b);
 
 	//show_list(stack_a, main.size_a);
@@ -29,11 +28,13 @@ int	main(int argc, char **argv)
 
 	//ft_rev_rotate(&stack_a, 0);
 
-	// printf("\nsddgf\n");
 	if(main.size_g < 4)
-		sort_3(&stack_a, &main);
-	if(main.size_g < 6)
+		sort_2_3(&stack_a, &main);
+	// printf("\n----------------------\n");
+	if(main.size_g > 3 && main.size_g < 6)
 		sort_4_5(&stack_a, &stack_b, &main);
+
+
 	// if (main.size_g > 5)
 	// 	sort_chunks(&stack_a, &stack_b, &main);
 

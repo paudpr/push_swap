@@ -18,6 +18,10 @@ void ft_push(t_list **stack_orig, t_list **stack_dest)
 	{
 		ft_lstadd_front(stack_dest, ft_lstnew(stack_orig[0]->data));
 		*stack_orig = copy->next;
+		show_list(*stack_dest, 10);
+		printf("\n\n");
+		show_list(*stack_orig, 10);
+		printf("\n\n");
 	}
 	free(copy);
 	//printf("\nFIN PUSH\n");

@@ -52,7 +52,7 @@ void	do_rotate(t_list **stack_a, t_list **stack_b, int type);
 int *main_check(int argc, char **argv, t_values *main);
 
 /* Sort */
-void sort_3(t_list **stack, t_values *main);
+void sort_2_3(t_list **stack, t_values *main);
 void sort_4_5(t_list **stack_a, t_list **stack_b, t_values *main);
 
 
