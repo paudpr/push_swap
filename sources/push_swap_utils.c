@@ -101,6 +101,7 @@ void	show_list(t_list *lst, int num)
 	if (lst == NULL)
 	{
 		write(1, "Lista vacía \n\n", 15);
+		printf("\n ...................... \n\n");
 		return ;
 	}
 	while (i < num && lst != NULL)
@@ -109,4 +110,5 @@ void	show_list(t_list *lst, int num)
 		lst = lst->next;
 		i++;
 	}
+	printf("\n ...................... \n\n");
 }

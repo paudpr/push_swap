@@ -26,19 +26,19 @@ int	main(int argc, char **argv)
 	//show_list(stack_a, main.size_a);
 	// show_list(stack_b, main.size_b);
 
-	//ft_rev_rotate(&stack_a, 0);
+	// ft_rev_rotate(&stack_a);
 
-	if(main.size_g < 4)
-		sort_2_3(&stack_a, &main);
-	// printf("\n----------------------\n");
-	if(main.size_g > 3 && main.size_g < 6)
+	// if(main.size_g < 4)
+	// 	sort_2_3(&stack_a, &main);
+	printf("\n----------------------\n");
+	// if(main.size_g > 3 && main.size_g < 6)
 		sort_4_5(&stack_a, &stack_b, &main);
 
 
 	// if (main.size_g > 5)
 	// 	sort_chunks(&stack_a, &stack_b, &main);
 
-	//show_list(stack_a, main.size_a);
+	show_list(stack_a, main.size_a);
 	// show_list(stack_b, main.size_b + 1);
 
 
