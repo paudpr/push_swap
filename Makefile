@@ -4,9 +4,11 @@ LIBFT_NAME = libft.a
 
 CC = gcc
 
-CFLAGS = -Wall -Werror -Wextra -g3
+CFLAGS = -Wall -Werror -Wextra
+CFLAGS += -I $(INC_PATH) -I $(LIBFT_PATH)
 
-CFLAGS += -I ./$(INC_PATH) -I ./$(LIBFT_PATH)
+LDFLAGS = -L $(LIBFT_PATH)
+LDLIBS = -lft
 
 LIBFT_PATH	= libft
 INC_PATH	= includes
@@ -23,20 +25,18 @@ SRC =	push_swap_utils.c \
 		rotate.c \
 		sort_small.c
 
-##CFLAGS += -I $(INC_PATH) -I $(LIBFT_PATH)
-##referencia al libft.a cuando se haya compilado, o algo
-##LIBFT_FLAGS = -L $(LIBFT_PATH)
+
 
 all: $(NAME)
 
 ##-L is used to include paths where the linker will look for libraries
 ##-l is used to link a library, which must be passed without the lib prefix and the extension
-## -p para creaar directorios uno dentro del otro
+## -p para crear directorios uno dentro del otro
 
 OBJS_NAME = $(SRC:%.c=%.o)
 
 ##addprefix "coge" el segundo argumento y el path del primer argumento. funciona como un while añadiendo paths a cada source
-SRCS = $(addprefix $(SRC_PATH)/, $(SRC))
+SRCS_NAME = $(addprefix $(SRC_PATH)/, $(SRC))
 
 OBJS =  $(addprefix $(OBJ_PATH)/, $(OBJS_NAME))
 
@@ -51,25 +51,28 @@ $(OBJ_PATH)/%.o: $(SRC_PATH)/%.c | $(OBJ_PATH)
 
 ##el | está para evitar que haga relink
 ##otra solución sería copiar la orden de $(LIBFT_NAME) para ejecutar antes de la compilación (dentro de $(NAME))
-$(NAME): $(OBJS) | $(LIBFT_NAME)
-		$(CC) $(CFLAGS) $(OBJS) -o $(NAME) $(addprefix $(LIBFT_PATH)/, $(LIBFT_NAME))
+$(NAME): $(OBJS) $(addprefix $(LIBFT_PATH)/, $(LIBFT_NAME))
+		make -C $(LIBFT_PATH)
+		$(CC) $^ -o $@ $(CFLAGS) $(LDFLAGS) $(LDLIBS)
+## $(CC) $(CFLAGS) $(OBJS) -o $(NAME) $(addprefix $(LIBFT_PATH)/, $(LIBFT_NAME))
 
 $(LIBFT_NAME):
-			$(MAKE) -sC $(LIBFT_PATH)
+			$(MAKE) all -sC $(LIBFT_PATH)
 
 ##RULES
 
-#hace make a un "sub-makefile"
 $(MAKE): make
 
-##debug: CFLAGS += -fsanitize=address
+##debug: CFLAGS += -fsanitize=address -g3
 ##debug: $(NAME)
 
 norminette:
 	norminette $(SRCS) 
 
 clean: 
-	rm $(OBJS)
+	rm $(NAME) 
+	rm -rf $(OBJ_PATH)
+	make clean -sC $(LIBFT_PATH)
 
 fclean: clean
 		rm $(NAME) 
