@@ -97,15 +97,20 @@ void	show_list(t_list *lst, int num)
 {
 	int	i;
 
-	i = 0;
 	if (lst == NULL)
 	{
 		write(1, "Lista vacía \n\n", 15);
 		printf("\n ...................... \n\n");
 		return ;
 	}
+	i = 0;
+	printf("cabeza lista -> %p\n\n", lst);
 	while (i < num && lst != NULL)
 	{
+		printf("i -> %d\n", i);
+		// printf("%p\n", &lst->data);
+		//printf("%d\n",  *lst->data);
+		// printf("%p\n", lst->next);
 		printf("DIRECTION: %p\nData: %d\nNext node: %p\n\n", &lst->data, *lst->data, lst->next);
 		lst = lst->next;
 		i++;

@@ -85,6 +85,7 @@ void sort_4_5(t_list **stack_a, t_list **stack_b, t_values *main)
 
 	printf("b ----> %d\n", *stack_b[0]->data);
 	printf("a ----> %d\n", *stack_a[0]->data);
+	i = ft_lstsize(*stack_b);
 	// aux = *stack_b;
 	while(i > 0)
 	{
@@ -94,6 +95,7 @@ void sort_4_5(t_list **stack_a, t_list **stack_b, t_values *main)
 			printf("1\n");
 			ft_push(stack_b, stack_a);
 			i--;
+			printf("i ----> %d\n", i);
 		}
 		else
 		{
@@ -103,12 +105,15 @@ void sort_4_5(t_list **stack_a, t_list **stack_b, t_values *main)
 			i--;
 		}
 		show_list(*stack_a, 10);
-	
-		
+	}
+	if (check_sort(stack_a, main) != 1)
+	{
+		printf("ahgo ft_rev_rotate\n");
+		ft_rev_rotate(stack_a);
 	}
 	
 
-	// printf("b\n\ndespues del sort\n\n");
+	printf("\n\nterminado bucle\n\n");
 	// if(check_sort(stack_b, main) == 1 && ft_lstsize(*stack_b) != 1)
 	// {
 	// 	printf("\n de aqui -----> \n\n");
@@ -140,7 +145,7 @@ void sort_4_5(t_list **stack_a, t_list **stack_b, t_values *main)
 	// }
 
 
-
+	show_list(*stack_a, 5);
 
 
 	// show_list(*stack_a, main->size_a);

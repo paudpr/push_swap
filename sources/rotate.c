@@ -26,6 +26,8 @@ void ft_rev_rotate(t_list **list)
 	unsigned int i;
 	unsigned int items;
 
+	if(list == NULL)
+		return ;
 	items = ft_lstsize(*list);
 	if (items <= 1)
 		return ;
@@ -33,18 +35,12 @@ void ft_rev_rotate(t_list **list)
 	i = 0;
 	while (i < items - 1)
 	{
+		copy = aux;
 		aux = aux->next;
 		i++;
 	}
 	ft_lstadd_front(list, aux);
-	copy = *list;
-	while(i != 0)
-	{
-		copy = copy->next;
-		i--;
-	}
 	copy->next = NULL;
-	free(copy);
 	return ;
 }
 
