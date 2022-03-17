@@ -45,13 +45,14 @@ $(OBJ_PATH):
 
 $(OBJ_PATH)/%.o: $(SRC_PATH)/%.c | $(OBJ_PATH)
 			$(CC) $(CFLAGS) -c $< -o $@
+
 			
 ##s es para silenciar y C para que vaya al directorio
 ##	make -sC $(LIBFT_PATH)
 
 ##el | está para evitar que haga relink
 ##otra solución sería copiar la orden de $(LIBFT_NAME) para ejecutar antes de la compilación (dentro de $(NAME))
-$(NAME): $(OBJS) $(addprefix $(LIBFT_PATH)/, $(LIBFT_NAME))
+$(NAME): $(OBJS)
 		make -C $(LIBFT_PATH)
 		$(CC) $^ -o $@ $(CFLAGS) $(LDFLAGS) $(LDLIBS)
 ## $(CC) $(CFLAGS) $(OBJS) -o $(NAME) $(addprefix $(LIBFT_PATH)/, $(LIBFT_NAME))
@@ -63,8 +64,8 @@ $(LIBFT_NAME):
 
 $(MAKE): make
 
-##debug: CFLAGS += -fsanitize=address -g3
-##debug: $(NAME)
+debug: CFLAGS += -fsanitize=address -g3
+debug: $(NAME)
 
 norminette:
 	norminette $(SRCS) 
@@ -75,7 +76,7 @@ clean:
 	make clean -sC $(LIBFT_PATH)
 
 fclean: clean
-		rm $(NAME) 
+		rm -rf $(NAME) 
 		rm -rf $(OBJ_PATH)
 		make fclean -sC $(LIBFT_PATH)
 

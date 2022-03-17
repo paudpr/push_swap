@@ -12,10 +12,9 @@ void ft_rotate(t_list **list)
 	if (items <= 1)
 		return ;
 	copy = *list;
+	ft_lstadd_back(list, copy);
 	*list = copy->next;
 	copy->next = NULL;
-	ft_lstadd_back(list, copy);
-	ft_lstclear(&copy, free);
 	return ;	
 }
 
