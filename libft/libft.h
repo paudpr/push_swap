@@ -6,7 +6,7 @@
 /*   By: pauladelpinoramirez <pauladelpinoramire    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/12 16:05:41 by pdel-pin          #+#    #+#             */
-/*   Updated: 2022/03/17 14:09:18 by pauladelpin      ###   ########.fr       */
+/*   Updated: 2022/03/17 14:16:01 by pauladelpin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,7 @@ Bonus part
 */
 
 t_list	*ft_lstnew(int *data);
+t_list	*ft_lstnew_pw(int *data);
 void	ft_lstadd_front(t_list **lst, t_list *new);
 int		ft_lstsize(t_list *lst);
 t_list	*ft_lstlast(t_list *lst);
@@ -79,6 +80,7 @@ void	ft_lstadd_back(t_list **lst, t_list *new);
 void	ft_lstdelone(t_list *lst, void (*del)(void *));
 void	ft_lstclear(t_list **lst, void (*del)(void *));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
 #endif

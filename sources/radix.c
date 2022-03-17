@@ -17,6 +17,7 @@ void radix(t_list **stack_a, t_list **stack_b, t_values *main)
 	int bit;
 
 	i = ft_lstsize(stack_a);
+	mapping(stack_a);
 	if (check_sort(stack_a, main) == 1)
 		return ;
 	bit = 0;
@@ -24,6 +25,7 @@ void radix(t_list **stack_a, t_list **stack_b, t_values *main)
 	{
 		sort_radix(stack_a, stack_b, main, &bit);
 	}
+	ft_push(stack_b, stack_a);
 }
 
 void sort_radix(t_list **stack_a, t_list **stack_b, t_values *main, int bit)
@@ -31,7 +33,7 @@ void sort_radix(t_list **stack_a, t_list **stack_b, t_values *main, int bit)
 	t_list *copy;
 
 	copy = *stack_a;
-	if (ft_binary(copy->data, bit) == 0)
+	if (binary(copy->data, bit) == 0)
 	{
 		copy = copy->next;
 		ft_push(*stack_a, *stack_b);

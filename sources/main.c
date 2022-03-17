@@ -19,28 +19,30 @@ int	main(int argc, char **argv)
 	
 	// int w = 2;
 	// //int q = 5;
-	// stack_b = ft_lstnew(&w);
+	// stack_b = ft_lstnew_pw(&w);
 	
-	printf("%d, %d, %d\n", main.size_g, main.size_a, main.size_b);
+	//printf("%d, %d, %d\n", main.size_g, main.size_a, main.size_b);
 
 	//show_list(stack_a, main.size_a);
 	// show_list(stack_b, main.size_b);
 
 	// ft_rev_rotate(&stack_a);
-
 	// if(main.size_g < 4)
+
+	printf("%lu\n", sizeof(char));
+	printf("%lu\n", sizeof(int));
 	printf("mierda\n");
 		// sort_2_3(&stack_a, &main);
 	printf("\n----------------------\n");
 	// if(main.size_g > 3 && main.size_g < 6)
-	sort_4_5(&stack_a, &stack_b, &main);
-
+	// sort_4_5(&stack_a, &stack_b, &main);
+	//sort_radix(&stack_a, &stack_b, &main);
 
 	// if (main.size_g > 5)
 	// 	sort_chunks(&stack_a, &stack_b, &main);
 	// printf("lalalalalalalalalalalalalalalalla\n");
-	show_list(stack_a, 5);
-	show_list(stack_b, 3);
+	// show_list(stack_a, 5);
+	// show_list(stack_b, 3);
 	// show_list(stack_b, main.size_b + 1);
 
 	printf("Hello world!\n");

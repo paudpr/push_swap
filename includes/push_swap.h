@@ -55,5 +55,6 @@ int *main_check(int argc, char **argv, t_values *main);
 void sort_2_3(t_list **stack, t_values *main);
 void sort_4_5(t_list **stack_a, t_list **stack_b, t_values *main);
 
-
+/* Mapping */
+void mapping(t_list **stack);
 #endif

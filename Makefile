@@ -23,6 +23,7 @@ SRC =	push_swap_utils.c \
 		swap.c\
 		push.c\
 		rotate.c \
+		mapping.c \
 		sort_small.c
 
 
