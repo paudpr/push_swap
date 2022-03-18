@@ -60,7 +60,7 @@ void mapping(t_list **stack);
 
 /* Radix */
 void radix(t_list **stack_a, t_list **stack_b, t_values *main);
-
+int binary_check(int data,  int bit);
 
 
 #endif

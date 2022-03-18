@@ -80,7 +80,7 @@ int check_sort(t_list **list, t_values *main)
 	// printf("%d\n", *list[0]->data);
 	while(i < main->size_g && list[0]->next != NULL)
 	{
-		if(*list[0]->data > *list[0]->next->data)
+		if(list[0]->index > list[0]->next->index)
 			return(0);
 		//printf("*list[0]->data -> %d\n", *list[0]->data);
 		list = &list[0]->next;
@@ -107,11 +107,10 @@ void	show_list(t_list *lst, int num)
 	printf("cabeza lista -> %p\n\n", lst);
 	while (i < num && lst != NULL)
 	{
-		printf("i -> %d\n", i);
 		// printf("%p\n", &lst->data);
 		//printf("%d\n",  *lst->data);
 		// printf("%p\n", lst->next);
-		printf("DIRECTION: %p\nData: %d\nNext node: %p\n\n", &lst->data, *lst->data, lst->next);
+		printf("DIRECTION: %p\nData: %d\nNext node: %p\nIndex: %d\n\n", &lst->data, *lst->data, lst->next, lst->index);
 		lst = lst->next;
 		i++;
 	}

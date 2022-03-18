@@ -16,7 +16,7 @@ void mapping(t_list **stack)
 		count = 0;
 		while(aux)
 		{
-			if(*aux->data > i)
+			if(*aux->data < i)
 				count++;
 			aux = aux->next;	
 		}

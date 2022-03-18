@@ -36,13 +36,20 @@ int	main(int argc, char **argv)
 	// if(main.size_g > 3 && main.size_g < 6)
 	// sort_4_5(&stack_a, &stack_b, &main);
 
+mapping(&stack_a);
+// show_list(stack_a, 10);
+printf("\n\n prueba -> %d\n", stack_a->index);
+binary_check(stack_a->index, 1);
+printf("binary_check -> %d\n", binary_check(stack_a->index, 1));
 
-	radix(&stack_a, &stack_b, &main);
+radix(&stack_a, &stack_b, &main);
+
+
 
 	// if (main.size_g > 5)
 	// 	sort_chunks(&stack_a, &stack_b, &main);
 	// printf("lalalalalalalalalalalalalalalalla\n");
-	// show_list(stack_a, 5);
+	// show_list(stack_a, 15);
 	// show_list(stack_b, 3);
 	// show_list(stack_b, main.size_b + 1);
 	if(check_sort(&stack_a, &main)  == 1)

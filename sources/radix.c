@@ -1,15 +1,37 @@
 #include <push_swap.h>
 
-int binary(int data,  int bit)
+int binary_check(int data,  int bit)
 {
 	if(!data)
 		return(0);
+	printf("antes de: \n");
+	printf("dta -> %d\n", data);
+	printf("bit -> %d\n", bit);
 	data >>= bit;
+	printf("\ndespues de: \n");
+	printf("dta -> %d\n", data);
+	printf("bit -> %d\n", bit);
 	if(data & 1)
 		return(1);
 	else
 		return(0);
 }
+
+// void radix(t_list **stack_a, t_list **stack_b, t_values *main)
+// {
+// 	int i;
+// 	int bit;
+// 	int len;
+
+// 	len = ft_lstsize(*stack_a);
+// 	mapping(stack_a);
+// 	if (check_sort(stack_a, main) == 1)
+// 		return ;
+// 	bit = 0;
+
+// }
+
+
 
 void radix(t_list **stack_a, t_list **stack_b, t_values *main)
 {
@@ -23,27 +45,46 @@ void radix(t_list **stack_a, t_list **stack_b, t_values *main)
 	if (check_sort(stack_a, main) == 1)
 		return ;
 	bit = 0;
-	while((len - 1) >>  bit != 0)
+	while((len - 1) >> bit != 0)
 		bit++;
+	printf("bit --> %d\n", bit);
 	i = 0;
-	while (i < bit)
+	while (i < bit && i < 1)
 	{
 		j = 0;
 		while(j < len)
 		{
-			if(check_sort(stack_a, main) != 1) //si si está ordenado
+			if(check_sort(stack_a, main) == 1) //si si está ordenado
 				break;
-			if(binary(*stack_a[0]->data, i) == 1)
+			printf("dentro de radix \n");
+			printf("%d\n", (stack_a[0]->index >> i));
+			printf("%d\n", ((stack_a[0]->index >> i) & 1));
+			if(((stack_a[0]->index >> i) & 1) == 1) //>> takes two numbers, right shifts the bits of the first operand, the second operand decides the number of places to shift
+			{
 				ft_rev_rotate(stack_a);
+				printf("hago rev_rotate\n");
+			}
 			else
+			{
 				ft_push(stack_a, stack_b);
+				printf("hago push a b\n");
+			}
 			j++;
+	// printf("is sorted -> %d\n", check_sort(stack_a, main));	
+	// printf("i --> %d\n", i);
+	// printf("j --> %d\n", j);
+	// show_list(*stack_a, 20);
+	// show_list(*stack_b, 20);
+
 		}
 		while(ft_lstsize(*stack_b) != 0)
 			ft_push(stack_b, stack_a);
 		i++;
+	printf("\nFIN DE CICLO\n\n");
 	}
 }
+
+
 
 
 
