@@ -13,21 +13,52 @@ int binary(int data,  int bit)
 
 void radix(t_list **stack_a, t_list **stack_b, t_values *main)
 {
-	int i;
+	int len;
 	int bit;
+	int i;
+	int j;
 
-	i = ft_lstsize(stack_a);
+	len = ft_lstsize(*stack_a);
 	mapping(stack_a);
 	if (check_sort(stack_a, main) == 1)
 		return ;
 	bit = 0;
+	while((len - 1) >>  bit != 0)
+		bit++;
+	i = 0;
+	while (i < bit)
+	{
+		j = 0;
+		while(j < len)
+		{
+			if(check_sort(stack_a, main) != 1) //si si está ordenado
+				break;
+			if(binary(*stack_a[0]->data, i) == 1)
+				ft_rev_rotate(stack_a);
+			else
+				ft_push(stack_a, stack_b);
+			j++;
+		}
+		while(ft_lstsize(*stack_b) != 0)
+			ft_push(stack_b, stack_a);
+		i++;
+	}
+}
+
+
+
+/*
 	while(check_sort(stack_a, main != 1))
 	{
 		sort_radix(stack_a, stack_b, main, &bit);
+		while(ft_lstsize(stack_b) != 0)
+			ft_push(stack_b, stack_a);
+		bit++;
 	}
 	ft_push(stack_b, stack_a);
-}
+}*/
 
+/*
 void sort_radix(t_list **stack_a, t_list **stack_b, t_values *main, int bit)
 {
 	t_list *copy;
@@ -41,4 +72,4 @@ void sort_radix(t_list **stack_a, t_list **stack_b, t_values *main, int bit)
 	else
 		copy = copy->next;
 		ft_rev_rotate(stack_a);
-}
+}*/

@@ -29,14 +29,15 @@ int	main(int argc, char **argv)
 	// ft_rev_rotate(&stack_a);
 	// if(main.size_g < 4)
 
-	printf("%lu\n", sizeof(char));
-	printf("%lu\n", sizeof(int));
-	printf("mierda\n");
+
+	
 		// sort_2_3(&stack_a, &main);
 	printf("\n----------------------\n");
 	// if(main.size_g > 3 && main.size_g < 6)
 	// sort_4_5(&stack_a, &stack_b, &main);
-	//sort_radix(&stack_a, &stack_b, &main);
+
+
+	radix(&stack_a, &stack_b, &main);
 
 	// if (main.size_g > 5)
 	// 	sort_chunks(&stack_a, &stack_b, &main);
@@ -44,8 +45,11 @@ int	main(int argc, char **argv)
 	// show_list(stack_a, 5);
 	// show_list(stack_b, 3);
 	// show_list(stack_b, main.size_b + 1);
+	if(check_sort(&stack_a, &main)  == 1)
+		printf("Hello world!\n");
+	else
+		printf("mierda\n");
 
-	printf("Hello world!\n");
 	// system("leaks -q push_swap");
 	return(0);
 }

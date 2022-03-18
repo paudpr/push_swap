@@ -57,4 +57,10 @@ void sort_4_5(t_list **stack_a, t_list **stack_b, t_values *main);
 
 /* Mapping */
 void mapping(t_list **stack);
+
+/* Radix */
+void radix(t_list **stack_a, t_list **stack_b, t_values *main);
+
+
+
 #endif
