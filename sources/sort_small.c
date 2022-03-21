@@ -87,26 +87,3 @@ void	sort_4_5(t_list **stack_a, t_list **stack_b, t_values *main)
 	if (*stack_a[0]->data > *stack_a[0]->next->data)
 		ft_swap(stack_a, 0, main);
 }
-/*
-void	sort_10(t_list **stack_a, t_list **stack_b, t_values *main)
-{
-	int	i;
-	int	*nums;
-
-	if (!stack_a)
-		return ;
-	i = 2;
-	nums = find_smallest(stack_a);
-	while (i > 0)
-	{
-		if (*stack_a[0]->data == nums[0] || *stack_a[0]->data == nums[1])
-		{
-			ft_push(stack_a, stack_b);
-			i--;
-		}
-		else
-			ft_rev_rotate(stack_a);
-	}
-	free(nums);
-}
-*/
