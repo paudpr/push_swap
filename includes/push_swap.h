@@ -40,33 +40,26 @@ void	show_list(t_list *lst, int num);
 void	ft_free(t_list **list, t_values main, int index);
 
 /* Game Rules */
-void	ft_swap(t_list **list, int type, t_values *main);
-void	do_swap_ss(t_list **stack_a, t_list **stack_b, int type, t_values *main);
+void	ft_swap(t_list **list, int type);
+void	do_swap(t_list **stack_a, t_list **stack_b, int type);
 void	ft_push(t_list **stack_orig, t_list **stack_dest);
-void	do_push(t_list *stack_orig, t_list *stack_dest, int type, t_values *main);
-void	ft_rotate(t_list **list);
-void	ft_rev_rotate(t_list **list);
+void	do_push(t_list **stack_orig, t_list **stack_dest, t_values *main, int type);
+void	ft_rotate(t_list **list, int type);
+void	ft_rev_rotate(t_list **list, int type);
 void	do_rotate(t_list **stack_a, t_list **stack_b, int type);
 
 /* Main    */
-int *main_check(int argc, char **argv, t_values *main);
+int		*main_check(int argc, char **argv, t_values *main);
+void	push_swap(t_list **stack_a, t_list  **stack_b, t_values *main);
 
 /* Sort */
-void sort_2_3(t_list **stack, t_values *main);
-void sort_4_5(t_list **stack_a, t_list **stack_b, t_values *main);
+void	sort_2_3(t_list **stack, t_values *main);
+void	sort_4_5(t_list **stack_a, t_list **stack_b, t_values *main);
+void	radix(t_list **stack_a, t_list **stack_b, t_values *main);
+int		binary_check(int data,  int bit);
 
 /* Mapping */
-void mapping(t_list **stack);
+void	mapping(t_list **stack);
 
-/* Radix */
-void radix(t_list **stack_a, t_list **stack_b, t_values *main);
-int binary_check(int data,  int bit);
-
-
-
-
-
-
-void	sort_big_stack(t_list **a, t_list **b, int length, t_values *main);
 
 #endif

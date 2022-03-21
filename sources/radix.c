@@ -34,13 +34,13 @@ void	radix(t_list **stack_a, t_list **stack_b, t_values *main)
 			if (check_sort(stack_a, main) == 1) //si si está ordenado
 				break ;
 			if (((stack_a[0]->index >> i) & 1) == 1) //  >> takes two numbers, right shifts the bits of the first operand, the second operand decides the number of places to shift
-				ft_rotate(stack_a);
+				ft_rotate(stack_a, 0);
 			else
-				ft_push(stack_a, stack_b);
+				do_push(stack_a, stack_b, main, 0);
 			j++;
 		}
 		while (ft_lstsize(*stack_b) != 0)
-			ft_push(stack_b, stack_a);
+			do_push(stack_a, stack_b, main, 1);
 		i++;
 	}
 }

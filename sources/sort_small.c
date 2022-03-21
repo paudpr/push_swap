@@ -10,7 +10,7 @@ void	sort_2_3(t_list **stack, t_values *main)
 	if (i < 3)
 	{
 		if (check_sort(stack, main) == 0)
-			ft_swap(stack, 0, main);
+			ft_swap(stack, 0);
 		return ;
 	}
 	while (check_sort(stack, main) == 0)
@@ -18,13 +18,13 @@ void	sort_2_3(t_list **stack, t_values *main)
 		if (*stack[0]->data > *stack[0]->next->data
 			&& *stack[0]->data > *stack[0]->next->next->data
 			&& *stack[0]->next->data < *stack[0]->next->next->data)
-			ft_rotate(stack);
+			ft_rotate(stack, 0);
 		if (*stack[0]->data > *stack[0]->next->data
 			|| *stack[0]->data < *stack[0]->next->next->data)
-			ft_swap(stack, 0, main);
+			ft_swap(stack, 0);
 		if (*stack[0]->data < *stack[0]->next->data
 			&& *stack[0]->data > *stack[0]->next->next->data)
-			ft_rev_rotate(stack);
+			ft_rev_rotate(stack, 0);
 	}
 }
 
@@ -70,20 +70,20 @@ void	sort_4_5(t_list **stack_a, t_list **stack_b, t_values *main)
 	{
 		if (*stack_a[0]->data == nums[0] || *stack_a[0]->data == nums[1])
 		{
-			ft_push(stack_a, stack_b);
+			do_push(stack_a, stack_b, main, 0);
 			i--;
 		}
 		else
-			ft_rev_rotate(stack_a);
+			ft_rev_rotate(stack_a, 0);
 	}
 	free(nums);
 	sort_2_3(stack_a, main);
 	i = 2;
 	while (i > 0)
 	{
-		ft_push(stack_b, stack_a);
+		do_push(stack_a, stack_b, main, 1);
 		i--;
 	}
 	if (*stack_a[0]->data > *stack_a[0]->next->data)
-		ft_swap(stack_a, 0, main);
+		do_swap(stack_a, stack_b, 0);
 }

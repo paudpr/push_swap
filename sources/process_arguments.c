@@ -128,32 +128,3 @@ int	check_duplicates(int *nums, int len)
 	}
 	return (1);
 }
-
-/*se queda en standby porsiaca luego hace falta pero en principio
-no lo necesito por que ya son números y eso es ordenable en si mismo
-
-int do_mapping(int *nums)
-{
-	int i;	//guarda índice de más pequeño
-	int j;	//sigue avanzando
-	int map;	//indice en map
-	int *map;
-
-	i = 0;
-	while (nums[i])
-	{
-		j = 0;
-		map = 0;
-		if (nums[i] < nums[j])
-			j++;
-		else (nums[i] > nums[j])
-		{
-			i = j;
-			j++;
-		}
-		map[i] = k;
-		k++;
-		i++;
-	}
-}
-*/
