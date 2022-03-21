@@ -37,12 +37,14 @@ int	main(int argc, char **argv)
 	// sort_4_5(&stack_a, &stack_b, &main);
 
 mapping(&stack_a);
-// show_list(stack_a, 10);
-printf("\n\n prueba -> %d\n", stack_a->index);
-binary_check(stack_a->index, 1);
-printf("binary_check -> %d\n", binary_check(stack_a->index, 1));
+show_list(stack_a, 10);
+// printf("\n\n prueba -> %d\n", stack_a->index);
+// binary_check(stack_a->index, 1);
+// printf("binary_check -> %d\n", binary_check(stack_a->index, 1));
 
 radix(&stack_a, &stack_b, &main);
+printf("aqui\n");
+
 
 
 
@@ -54,7 +56,7 @@ radix(&stack_a, &stack_b, &main);
 	// show_list(stack_b, main.size_b + 1);
 	if(check_sort(&stack_a, &main)  == 1)
 		printf("Hello world!\n");
-	else
+	else if(check_sort(&stack_a, &main)  == 0)
 		printf("mierda\n");
 
 	// system("leaks -q push_swap");
