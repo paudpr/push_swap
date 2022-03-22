@@ -21,7 +21,7 @@ int	main(int argc, char **argv)
 		printf("Hello world!\n");
 	else if(check_sort(&stack_a, &main)  == 0)
 		printf("mierda\n");
-
+	show_list(stack_a, 10);
 	// system("leaks -q push_swap");
 	return(0);
 }

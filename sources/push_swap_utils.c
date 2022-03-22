@@ -84,7 +84,7 @@ int check_sort(t_list **list, t_values *main)
 	return(1);
 }
 
-/*
+
 void	show_list(t_list *lst, int num)
 {
 	int	i;
@@ -107,4 +107,4 @@ void	show_list(t_list *lst, int num)
 		i++;
 	}
 	printf("\n ...................... \n\n");
-}*/
+}

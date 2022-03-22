@@ -85,5 +85,5 @@ void	sort_4_5(t_list **stack_a, t_list **stack_b, t_values *main)
 		i--;
 	}
 	if (*stack_a[0]->data > *stack_a[0]->next->data)
-		do_swap(stack_a, stack_b, 0);
+		ft_swap(stack_a, 0);
 }

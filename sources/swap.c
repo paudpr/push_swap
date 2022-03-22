@@ -13,6 +13,7 @@ void	ft_swap(t_list **list, int type)
 	t_list	*aux;
 	unsigned int		items;
 	
+	printf(">>>> %d\n", type);
 	if (!list)
 		return ;
 	items = ft_lstsize(*list);

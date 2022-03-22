@@ -5,6 +5,7 @@ void push_swap(t_list **stack_a, t_list  **stack_b, t_values *main)
 	unsigned int i;
 
 	i = ft_lstsize(*stack_a);
+	printf("fghgfjhhgfdsfgh");
 	if (i != main->size_g || main->size_a != main->size_g)
 		print_error();
 	if (main->size_a < 1)
