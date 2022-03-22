@@ -81,6 +81,7 @@ int check_sort(t_list **list, t_values *main)
 		list = &list[0]->next;
 		i++;
 	}
+	printf("FUERA\n");
 	return(1);
 }
 

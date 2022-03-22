@@ -16,12 +16,11 @@ int	main(int argc, char **argv)
 	main.size_a = main.size_g;
 	stack_a = init_list(main.aux_nums, main.size_g);
 	push_swap(&stack_a, &stack_b, &main);
-
 	if(check_sort(&stack_a, &main)  == 1)
 		printf("Hello world!\n");
 	else if(check_sort(&stack_a, &main)  == 0)
 		printf("mierda\n");
-	show_list(stack_a, 10);
-	// system("leaks -q push_swap");
+	show_list(stack_a, 50);
+	system("leaks -q push_swap");
 	return(0);
 }
