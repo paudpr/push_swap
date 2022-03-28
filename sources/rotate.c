@@ -44,11 +44,11 @@ void	ft_rev_rotate(t_list **list, int type)
 	}
 	ft_lstadd_front(list, aux);
 	copy->next = NULL;
-	return ;
 	if (type == 0)
 		write(1, "rra\n", 4);
 	else if (type == 1)
 		write(1, "rrb\n", 4);
+	return ;
 }
 
 void	do_rotate(t_list **stack_a, t_list **stack_b, int type)

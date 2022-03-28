@@ -17,8 +17,9 @@ OBJ_PATH	= objects
 
 SRC =	push_swap_utils.c \
 		main.c \
-		main_utils.c\
-		process_arguments.c\
+		main_utils.c \
+		process_arguments.c \
+		process_arguments_utils.c \
 		create_list.c\
 		swap.c\
 		push.c\
