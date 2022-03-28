@@ -9,8 +9,8 @@ intercambiar los data de los dos elementos contando con el aux
 */
 void	ft_swap(t_list **list, int type)
 {
-	t_list	*copy;
-	t_list	*aux;
+	t_list				*copy;
+	t_list				*aux;
 	unsigned int		items;
 	
 	if (!list)
@@ -25,6 +25,9 @@ void	ft_swap(t_list **list, int type)
 	aux->data = copy->next->data;
 	copy->next->data = copy->data;
 	copy->data = aux->data;
+	aux->index = copy->next->index;
+	copy->next->index = copy->index;
+	copy->index = aux->index;
 	if (type == 0)
 		write(1, "sa\n", 3);
 	if (type == 1)

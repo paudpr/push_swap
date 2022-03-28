@@ -15,11 +15,11 @@ void ft_rotate(t_list **list, int type)
 	ft_lstadd_back(list, copy);
 	*list = copy->next;
 	copy->next = NULL;
-	return ;	
 	if (type == 0)
 		write(1, "ra\n", 3);
 	else if (type == 1)
 		write(1, "rb\n", 3);
+	return ;	
 }
 
 void ft_rev_rotate(t_list **list, int type)
