@@ -1,9 +1,15 @@
 #include <push_swap.h>
 
-void	sort_3(t_list **stack, t_values *main)
+void	sort_2_3(t_list **stack, t_values *main)
 {
 	if (!stack)
 		return ;
+	if (ft_lstsize(*stack) == 2)
+	{
+		if (check_sort(stack, main) == 0)
+			ft_swap(stack, 0);
+		return ;
+	}
 	if (check_sort(stack, main) == 0)
 	{
 		if (*stack[0]->next->next->data > *stack[0]->data)
@@ -56,8 +62,6 @@ void	small_push(t_list **stk_a, t_list **stk_b, int *nums, t_values *main)
 	int	i;
 
 	i = 2;
-	if (ft_lstsize(*stk_a) == 4)
-		i = 1;
 	while (i > 0)
 	{
 		if (*stk_a[0]->data == nums[0] || *stk_a[0]->data == nums[1])
@@ -80,7 +84,7 @@ void	sort_4_5(t_list **stack_a, t_list **stack_b, t_values *main)
 	nums = find_smallest(stack_a);
 	small_push(stack_a, stack_b, nums, main);
 	free(nums);
-	sort_3(stack_a, main);
+	sort_2_3(stack_a, main);
 	i = 2;
 	while (i > 0)
 	{
