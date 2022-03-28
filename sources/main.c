@@ -9,18 +9,10 @@ int	main(int argc, char **argv)
 	if (argc < 2)
 		return (0);
 	main.aux_nums = main_check(argc, argv, &main);
-	
-
 	stack_b = NULL;
 	main.size_b = 0;
 	main.size_a = main.size_g;
 	stack_a = init_list(main.aux_nums, main.size_g);
 	push_swap(&stack_a, &stack_b, &main);
-	// if(check_sort(&stack_a, &main)  == 1)
-	// 	printf("Hello world!\n");
-	// else if(check_sort(&stack_a, &main)  == 0)
-	// 	printf("mierda\n");
-	// show_list(stack_a, 1000);
-	// system("leaks -q push_swap");
-	return(0);
+	return (0);
 }

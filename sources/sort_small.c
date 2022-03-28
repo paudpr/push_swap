@@ -57,6 +57,23 @@ int	*find_smallest(t_list **stack)
 	return (nums);
 }
 
+void	push_small(t_list **stk_a, t_list **stk_b, int **nums, t_values *main)
+{
+	int	i;
+
+	i = 2;
+	while (i > 0)
+	{
+		if (*stk_a[0]->data == nums[0] || *stk_a[0]->data == nums[1])
+		{
+			do_push(stk_a, stk_b, main, 0);
+			i--;
+		}
+		else
+			ft_rev_rotate(stk_a, 0);
+	}
+}
+
 void	sort_4_5(t_list **stack_a, t_list **stack_b, t_values *main)
 {
 	int	i;
@@ -66,16 +83,7 @@ void	sort_4_5(t_list **stack_a, t_list **stack_b, t_values *main)
 		return ;
 	i = 2;
 	nums = find_smallest(stack_a);
-	while (i > 0)
-	{
-		if (*stack_a[0]->data == nums[0] || *stack_a[0]->data == nums[1])
-		{
-			do_push(stack_a, stack_b, main, 0);
-			i--;
-		}
-		else
-			ft_rev_rotate(stack_a, 0);
-	}
+	push_smallest(stack_a, stack_b, nums, main);
 	free(nums);
 	sort_2_3(stack_a, main);
 	i = 2;

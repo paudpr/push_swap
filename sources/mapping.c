@@ -1,6 +1,6 @@
 #include <push_swap.h>
 
-void mapping(t_list **stack)
+void	mapping(t_list **stack)
 {
 	int		i;
 	int		count;
@@ -9,16 +9,16 @@ void mapping(t_list **stack)
 
 	i = 0;
 	copy = *stack;
-	while(copy)
+	while (copy)
 	{
 		aux = *stack;
 		i = *copy->data;
 		count = 0;
-		while(aux)
+		while (aux)
 		{
-			if(*aux->data < i)
+			if (*aux->data < i)
 				count++;
-			aux = aux->next;	
+			aux = aux->next;
 		}
 		free(aux);
 		copy->index = count;
