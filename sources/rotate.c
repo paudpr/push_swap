@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   rotate.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pauladelpinoramirez <pauladelpinoramire    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/28 14:23:14 by pauladelpin       #+#    #+#             */
+/*   Updated: 2022/03/28 14:23:15 by pauladelpin      ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <push_swap.h>
 
 /* shift all elements of stack by one. first element becomes last */

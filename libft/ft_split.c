@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pdel-pin <pdel-pin@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pauladelpinoramirez <pauladelpinoramire    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 17:17:08 by pdel-pin          #+#    #+#             */
-/*   Updated: 2021/11/16 11:44:48 by pdel-pin         ###   ########.fr       */
+/*   Updated: 2022/03/28 14:24:27 by pauladelpin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static size_t	ft_count_strings(const char *s, char c)
 
 	new_str = 0;
 	str_n = 0;
-	 i = 0;
+	i = 0;
 	while (s[i])
 	{
 		if (s[i] != c && new_str == 0)

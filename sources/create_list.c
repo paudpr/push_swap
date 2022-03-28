@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   create_list.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pauladelpinoramirez <pauladelpinoramire    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/28 14:22:49 by pauladelpin       #+#    #+#             */
+/*   Updated: 2022/03/28 14:22:50 by pauladelpin      ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <push_swap.h>
 
 //contar número elementos en array y pasarlos todos a una lista enlazada

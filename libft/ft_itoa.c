@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pdel-pin <pdel-pin@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pauladelpinoramirez <pauladelpinoramire    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 14:08:46 by pdel-pin          #+#    #+#             */
-/*   Updated: 2021/11/16 11:39:47 by pdel-pin         ###   ########.fr       */
+/*   Updated: 2022/03/28 14:25:05 by pauladelpin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t	ft_get_len(int	n)
+static size_t	ft_get_len(int n)
 {
 	size_t	len;
 
