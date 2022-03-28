@@ -6,7 +6,7 @@
 /*   By: pauladelpinoramirez <pauladelpinoramire    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 14:23:14 by pauladelpin       #+#    #+#             */
-/*   Updated: 2022/03/28 14:23:15 by pauladelpin      ###   ########.fr       */
+/*   Updated: 2022/03/28 17:15:24 by pauladelpin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ void	ft_rotate(t_list **list, int type)
 	return ;
 }
 
+/* shift all elements of stack by one. last element becomes first */
 void	ft_rev_rotate(t_list **list, int type)
 {
 	t_list			*copy;

@@ -6,12 +6,13 @@
 /*   By: pauladelpinoramirez <pauladelpinoramire    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 14:22:51 by pauladelpin       #+#    #+#             */
-/*   Updated: 2022/03/28 14:22:52 by pauladelpin      ###   ########.fr       */
+/*   Updated: 2022/03/28 17:09:03 by pauladelpin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <push_swap.h>
 
+//arguments cleaning and processing
 int	*main_check(int argc, char **argv, t_values *main)
 {
 	int		i;

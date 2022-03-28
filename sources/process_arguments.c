@@ -6,7 +6,7 @@
 /*   By: pauladelpinoramirez <pauladelpinoramire    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 14:23:01 by pauladelpin       #+#    #+#             */
-/*   Updated: 2022/03/28 14:23:02 by pauladelpin      ###   ########.fr       */
+/*   Updated: 2022/03/28 17:11:57 by pauladelpin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,14 +28,6 @@ int	check_valid_args(char **argv)
 }
 
 //joins arguments into a single string
-/*recoge los argumentos y hace una copia del primer argumento
-en str y empieza a iterar por cada nuevo argumento asigna memoria
-a un auxiliar que contenga  la string que tenemos hasta entonces,
-la longitud del nuevo  argumento que estamos leyendo + 2 -> uno para 
-un espacio y otro para 0 comprueba la asignación de memoria copia str
-a aux, y luego concatena el argumento que estamos leyendo y un espacio
-al final terminarlo con un 0asginar memoria para el nuevo str, igualar
-a aux y liberar aux para la siguiente vuelta.*/
 char	*join_argv(int argc, char **argv)
 {
 	char	*str;
@@ -60,11 +52,7 @@ char	*join_argv(int argc, char **argv)
 	return (str);
 }
 
-//checks if there's that's not a number
-/*introduce los argumentos como un array de números y comprueba 
-que sean números válidossolo con dígitos o signos. Devuelve 1 
-si es correcto o 0 si no lo es. 
-Todavia son strings. Transformar al pasar por itoa.*/
+//checks if there's argvs that are not numbers
 int	check_valid_chars(char **nums)
 {
 	int	i;
@@ -87,11 +75,7 @@ int	check_valid_chars(char **nums)
 	return (1);
 }
 
-//gets **split and returns *nums with every value transformed into number value 
-/*recoge el array doble, cuenta el número de items que tiene
-y aplica atoi a cada uno de los items para transformarlo en valor numérico.
-Si sobrepasa MIN_INT o MAX_INT sale de la función.
-Si hay signos repetidos devuelve error y sale de la función.*/
+//gets **split and returns *nums with every value transformed into number value
 int	*transform_to_nums(char **split)
 {
 	int	i;
@@ -117,10 +101,6 @@ int	*transform_to_nums(char **split)
 }
 
 //checks there are no duplicated numbers
-/*sin pasarse de la longitud de la cadena (cantidad de 
-números que tenemos) vamos comparando con todos los números 
-que vienen detrás en la cadena
-y devuelve un booleano*/
 int	check_duplicates(int *nums, int len)
 {
 	int	i;

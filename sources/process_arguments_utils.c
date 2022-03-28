@@ -6,12 +6,13 @@
 /*   By: pauladelpinoramirez <pauladelpinoramire    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 14:22:59 by pauladelpin       #+#    #+#             */
-/*   Updated: 2022/03/28 14:23:00 by pauladelpin      ###   ########.fr       */
+/*   Updated: 2022/03/28 17:10:53 by pauladelpin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <push_swap.h>
 
+//ignores spaces, + , -
 static int	ft_atoi_long_spaces(const char *str, int *r)
 {
 	int	i;
@@ -26,6 +27,7 @@ static int	ft_atoi_long_spaces(const char *str, int *r)
 	return (i);
 }
 
+//version of atoi that allows translation of max_int and min_int
 long	ft_atoi_long(const char *str)
 {
 	int		i;

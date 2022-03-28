@@ -6,18 +6,20 @@
 /*   By: pauladelpinoramirez <pauladelpinoramire    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 14:23:04 by pauladelpin       #+#    #+#             */
-/*   Updated: 2022/03/28 14:23:05 by pauladelpin      ###   ########.fr       */
+/*   Updated: 2022/03/28 17:13:10 by pauladelpin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <push_swap.h>
 
+//prints error message
 void	print_error(void)
 {
 	write(1, "Error\n", 6);
 	exit(0);
 }
 
+//frees double array
 void	ft_free_double(char **tab, int n)
 {
 	if (tab[n - 1])
@@ -41,6 +43,7 @@ void	ft_free(t_list **list, t_values main, int index)
 	}
 }
 
+//checks if the list is sorted, returns 0 if not
 int	check_sort(t_list **list, t_values *main)
 {
 	unsigned int	i;
@@ -57,6 +60,7 @@ int	check_sort(t_list **list, t_values *main)
 }
 
 /*
+//prints nodes of list, in order
 void	show_list(t_list *lst, int num)
 {
 	int	i;

@@ -6,12 +6,13 @@
 /*   By: pauladelpinoramirez <pauladelpinoramire    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 14:23:16 by pauladelpin       #+#    #+#             */
-/*   Updated: 2022/03/28 14:23:17 by pauladelpin      ###   ########.fr       */
+/*   Updated: 2022/03/28 17:17:54 by pauladelpin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <push_swap.h>
 
+//sort 2 or 3 numbers
 void	sort_2_3(t_list **stack, t_values *main)
 {
 	if (!stack)
@@ -40,6 +41,7 @@ void	sort_2_3(t_list **stack, t_values *main)
 	}
 }
 
+//finds 2 smallest numbers in list
 int	*find_smallest(t_list **stack)
 {
 	int		*nums;
@@ -69,6 +71,7 @@ int	*find_smallest(t_list **stack)
 	return (nums);
 }
 
+//does push of smallest numbers to stack_b
 void	small_push(t_list **stk_a, t_list **stk_b, int *nums, t_values *main)
 {
 	int	i;
@@ -86,6 +89,7 @@ void	small_push(t_list **stk_a, t_list **stk_b, int *nums, t_values *main)
 	}
 }
 
+//sorts 4 or 5 numbers
 void	sort_4_5(t_list **stack_a, t_list **stack_b, t_values *main)
 {
 	int	i;

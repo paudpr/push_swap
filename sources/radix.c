@@ -6,23 +6,13 @@
 /*   By: pauladelpinoramirez <pauladelpinoramire    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 14:23:11 by pauladelpin       #+#    #+#             */
-/*   Updated: 2022/03/28 14:23:12 by pauladelpin      ###   ########.fr       */
+/*   Updated: 2022/03/28 17:14:58 by pauladelpin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <push_swap.h>
 
-int	binary_check(int data, int bit)
-{
-	if (!data)
-		return (0);
-	data >>= bit;
-	if (data & 1)
-		return (1);
-	else
-		return (0);
-}
-
+//applies radix algorithm (bits operations) to sort big chuncks
 void	radix(t_list **stack_a, t_list **stack_b, t_values *main)
 {
 	int	len;

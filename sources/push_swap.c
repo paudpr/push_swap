@@ -6,12 +6,13 @@
 /*   By: pauladelpinoramirez <pauladelpinoramire    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 14:23:06 by pauladelpin       #+#    #+#             */
-/*   Updated: 2022/03/28 14:23:07 by pauladelpin      ###   ########.fr       */
+/*   Updated: 2022/03/28 17:13:42 by pauladelpin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <push_swap.h>
 
+//sorts algorithm depending on list size
 void	push_swap(t_list **stack_a, t_list **stack_b, t_values *main)
 {
 	unsigned int	i;

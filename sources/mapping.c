@@ -6,12 +6,13 @@
 /*   By: pauladelpinoramirez <pauladelpinoramire    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 14:22:56 by pauladelpin       #+#    #+#             */
-/*   Updated: 2022/03/28 14:22:57 by pauladelpin      ###   ########.fr       */
+/*   Updated: 2022/03/28 17:09:37 by pauladelpin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <push_swap.h>
 
+//gives each node an index of position in the list
 void	mapping(t_list **stack)
 {
 	int		i;

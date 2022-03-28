@@ -6,13 +6,13 @@
 /*   By: pauladelpinoramirez <pauladelpinoramire    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 14:22:49 by pauladelpin       #+#    #+#             */
-/*   Updated: 2022/03/28 14:22:50 by pauladelpin      ###   ########.fr       */
+/*   Updated: 2022/03/28 17:07:37 by pauladelpin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <push_swap.h>
 
-//contar número elementos en array y pasarlos todos a una lista enlazada
+//counts number of items in list and creates a linked list node with each item
 t_list	*init_list(int *nums, int len)
 {
 	t_list	*stack_a;
